@@ -1,10 +1,31 @@
+window.addEventListener('scroll', onScroll);
+
+onScroll();
+
 function onScroll() {
-  const navigation = document.getElementById('navigation')
+  showNavOnScroll();
+  showBackToTopButtonOnScroll();
+}
+
+function showNavOnScroll() {
+  const navigation = document.getElementById('navigation');
   if (scrollY > 0) {
     navigation.classList.add('scroll');
   } else {
     navigation.classList.remove('scroll');
   }
+}
+
+function showBackToTopButtonOnScroll() {
+  const buttomBackTop = document.querySelector('#backToTopButton');
+  
+ if (scrollY > 800) {
+  buttomBackTop.classList.add('show');
+ } else {
+  buttomBackTop.classList.remove('show');
+ }
+
+ 
 }
 
 const openMenu = () => {
